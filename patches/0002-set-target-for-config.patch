@@ -1,7 +1,7 @@
 From 0fb773ef77a27ac59c4ad057e94180a955935a39 Mon Sep 17 00:00:00 2001
 From: nullrequest <30698906+Lunarequest@users.noreply.github.com>
 Date: Sat, 4 Sep 2021 10:39:47 +0530
-Subject: [PATCH] set target for config
+Subject: [PATCH 2/3] set target for config
 
 ---
  electron-builder-deploy64.yml | 4 +++-

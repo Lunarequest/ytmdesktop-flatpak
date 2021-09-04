@@ -12,6 +12,7 @@ finish-args:
   - --socket=x11
   - --socket=pulseaudio
   - --share=network
+  - --device=dri
 modules:
   - name: ytmdesktop
     buildsystem: simple
@@ -43,12 +44,15 @@ modules:
         commit: e4c5e308e345765fb7e42d149bb4abf39f7ae4bd
       - type: patch
         paths:
+          # create command for flatpaks only
           - patches/0001-don-t-hard-code-cache-in-electron-build-config.patch
           - patches/0002-set-target-for-config.patch
+          # upstream this
+          - patches/0003-disable-autoupdate-if-running-in-flatpak.patch
       - type: script
         dest-filename: start-ytmdesktop.sh
         commands:
-          - zypak-wrapper.sh /app/ytmdesktop/youtube-music-desktop-app "$@"
+          - FLATPAK_HOST=1 zypak-wrapper.sh /app/ytmdesktop/youtube-music-desktop-app "$@"
       - type: file
         path: app.ytmdesktop.ytmdesktop.desktop
       - type: file
