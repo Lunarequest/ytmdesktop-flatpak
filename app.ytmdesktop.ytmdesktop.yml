@@ -13,7 +13,7 @@ finish-args:
   - --socket=pulseaudio
   - --share=network
   - --device=dri
-  - --own-name=org.mpris.MediaPlayer2.*
+  - --own-name=org.mpris.MediaPlayer2.youtubemusic
 modules:
   - name: ytmdesktop
     buildsystem: simple
